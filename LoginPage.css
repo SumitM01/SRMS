@@ -21,10 +21,10 @@ a {
     min-width: 100%;
     position: fixed;
 }
-table, th, td{
+/* table, th, td{
     border: 1px gold;
     border-radius: 1rem;
-}
+} */
 td, th{
     text-align:center;
 }

@@ -70,12 +70,12 @@ if ($conn->connect_error) {
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col col-xl-10">
                     <div class="card" style="border-radius: 1rem;">
-                    <table class="table table-zebra table-bordered table-hover border-warning table-dark">
+                    <table class="table" style="margin-bottom: 0px;">
                         <thead>
-                            <th>Subject Name</th>
-                            <th>Marks Received</th>
+                            <th class="bg-info">Subject Name</th>
+                            <th  class="bg-danger">Marks Received</th>
                         </thead>
-                        <tbody>
+                        <tbody class="table-light">
                                 <?php
                                     $subjectids_by_classid_studentid = $conn->query("SELECT SubjectId FROM tblresult WHERE StudentId = '$studentid' AND ClassId = '$classid'");
                                     if(mysqli_num_rows($subjectids_by_classid_studentid))
