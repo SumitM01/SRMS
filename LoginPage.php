@@ -60,7 +60,7 @@ if ($conn->connect_error) {
                                             <select name="class" class="form-control" id="class" required="required">
                                             <option selected>Select Class</option>
                                             <?php
-                                            $result = mysqli_query($conn, "SELECT * FROM tblclasses");
+                                            $result = mysqli_query($conn, "SELECT * FROM tblclasses GROUP BY ClassName");
                                             while($row = mysqli_fetch_array($result)){
                                             ?>
                                             <option value="<?php echo $row['ClassName'];?>"><?php echo $row["ClassName"];?></option>
@@ -76,7 +76,7 @@ if ($conn->connect_error) {
                                             <select name="section" class="form-control" id="section" required="required">
                                             <option selected>Select Section</option>
                                             <?php
-                                            $result = mysqli_query($conn, "SELECT * FROM tblclasses");
+                                            $result = mysqli_query($conn, "SELECT * FROM tblclasses GROUP BY Section");
                                             while($row = mysqli_fetch_array($result)){
                                             ?>
                                             <option value="<?php echo $row['Section'];?>"><?php echo $row["Section"];?></option>

@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 ?>
 <html>
     <title>
-        Add Class:Admin :Resulting
+        Student Table :Admin :Resulting
     </title>
     <head>
         <!-- CSS only -->
@@ -29,9 +29,9 @@ if ($conn->connect_error) {
         <div class="container py-5">
             <div class="row justify-content-center align-items-center">
                 <div class="col col-xl-10">
-                    <div class="card" style="border-radius: 1rem; overflow:auto;">
+                    <div class="card" style="border-radius: 1rem;">
                     <div class="col-sm-auto">
-                        <a href="admin_functions.php" class="btn btn-dark">Back to admin page</a>
+                        <a href="admin_functions.php" class="btn btn-dark" style="justify-content:center">Back to admin page</a>
                     </div>
                     <?php
                     $value="";
@@ -47,31 +47,34 @@ if ($conn->connect_error) {
                     }
                     ?>
                     <p><?php echo $value ?></p>
-                    <table id="dtVerticalScrollExample" class="table" style="margin-bottom: 0px;">
+                    <table class="table" style="margin-bottom: 0px;">
                         <thead>
-                            <th class="bg-info">Class Id</th>
-                            <th  class="bg-danger">Class</th>
-                            <th  class="bg-danger">Section</th>
+                            <th class="bg-info">Student Id</th>
+                            <th  class="bg-danger">Student Name</th>
+                            <th  class="bg-danger">Roll</th>
+                            <th  class="bg-danger">Class Id</th>
                             <th class="bg-warning"> Modify </th>
                             <th class="bg-warning"> Delete </th>
                         </thead>
                         <tbody class="table-light">
                                 <?php
-                                    $classdetails = $conn->query("SELECT * FROM tblclasses");
-                                    if(mysqli_num_rows($classdetails))
+                                    $studentdetails = $conn->query("SELECT * FROM tblstudents");
+                                    if(mysqli_num_rows($studentdetails))
                                     {
-                                        while($classdetailsarray = mysqli_fetch_array($classdetails))
+                                        while($studentdetailsarray = mysqli_fetch_array($studentdetails))
                                         {
-                                            $classid = $classdetailsarray['ClassId'];
-                                            $classname = $classdetailsarray['ClassName'];
-                                            $section = $classdetailsarray['Section'];
+                                            $studentid = $studentdetailsarray['StudentId'];
+                                            $studentname = $studentdetailsarray['StudentName'];
+                                            $roll = $studentdetailsarray['RollId'];
+                                            $classid = $studentdetailsarray['ClassId'];
                                             ?> 
                                             <tr>
-                                            <td><?php echo $classid;?></td>
-                                            <td><?php echo $classname; ?></td>
-                                            <td><?php echo $section; ?></td>
-                                            <td><a href="update-class.php?classid=<?php echo $classdetailsarray['ClassId'] ?>" style="text-decoration: none;">Update</a></td>
-                                            <td><a href="delete-class-backend.php?classid=<?php echo $classdetailsarray['ClassId'] ?>" style="text-decoration:none;">Delete</a></td>
+                                            <td><?php echo $studentid;?></td>
+                                            <td><?php echo $studentname; ?></td>
+                                            <td><?php echo $roll; ?></td>
+                                            <td><?php echo $classid; ?></td>
+                                            <td><a href="update-student.php?studentid=<?php echo $studentdetailsarray['StudentId'] ?>" style="text-decoration: blue;">Update</a></td>
+                                            <td><a href="delete-student-backend.php?studentid=<?php echo $studentdetailsarray['StudentId'] ?>" style="text-decoration:crimson;">Delete</a></td>
                                             </tr>
                                             <?php
                                         }

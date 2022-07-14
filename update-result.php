@@ -10,16 +10,16 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-if(isset($_GET['classid']))
+if(isset($_GET['id']))
 {
-    $classid = $_GET['classid'];
-    $single_class = $conn->query("SELECT * FROM tblclasses WHERE ClassId = '$classid'");
-    $single_class_array = mysqli_fetch_array($single_class);
+    $id = $_GET['id'];
+    $single_result = $conn->query("SELECT * FROM tblresult WHERE Id = '$id'");
+    $single_result_array = mysqli_fetch_array($single_result);
 }
 ?>
 <html>
     <title>
-        Add Class:Admin :Resulting
+        Update Result Details :Admin :Resulting
     </title>
     <head>
         <!-- CSS only -->
@@ -36,18 +36,26 @@ if(isset($_GET['classid']))
             <div class="row justify-content-center align-items-center">
                 <div class="col col-xl-10">
                     <div class="card" style="border-radius: 1rem;">
-                    <form action="update-class-backend.php" method="post">
+                    <form action="update-result-backend.php" method="post">
                         <div class="form-outline mb-4">
-                            <input type="text" placeholder="Enter Class Id" name="classid" value="<?php echo $classid ?>" readonly>
-                            <label for="classid">Class id</label>
+                            <input type="text" name="resultid" value="<?php echo $id ?>" readonly>
+                            <label for="classid">Id</label>
                         </div>
                         <div class="form-outline mb-4">
-                            <input type="text" placeholder="Enter Class" name="class" value="<?php echo $single_class_array['ClassName'] ?>">
-                            <label for="classid">Class</label>
+                            <input type="text" name="resultstudentid" value="<?php echo $single_result_array['StudentId'] ?>" readonly>
+                            <label for="classid">Student Id</label>
                         </div>
                         <div class="form-outline mb-4">
-                            <input type="text" placeholder="Enter Section" name="section" value="<?php echo $single_class_array['Section'] ?>" oninput="this.value = this.value.toUpperCase()">
-                            <label for="classid">Section</label>
+                            <input type="text" name="resultclassid" value="<?php echo $single_result_array['ClassId'] ?>" readonly>
+                            <label for="classid">Class Id</label>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" placeholder="Enter Subject Name" name="resultsubjectid" value="<?php echo $single_result_array['SubjectId'] ?>">
+                            <label for="classid">Subject Id</label>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" placeholder="Enter subject marks" name="resultmarks" value="<?php echo $single_result_array['Marks'] ?>">
+                            <label for="classid">Subject Marks</label>
                         </div>
                         <input type="submit" class="btn btn-success" value="Submit">
                     </form>

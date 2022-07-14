@@ -10,16 +10,16 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-if(isset($_GET['classid']))
+if(isset($_GET['studentid']))
 {
-    $classid = $_GET['classid'];
-    $single_class = $conn->query("SELECT * FROM tblclasses WHERE ClassId = '$classid'");
-    $single_class_array = mysqli_fetch_array($single_class);
+    $studentid = $_GET['studentid'];
+    $single_student = $conn->query("SELECT * FROM tblstudents WHERE StudentId = '$studentid'");
+    $single_student_array = mysqli_fetch_array($single_student);
 }
 ?>
 <html>
     <title>
-        Add Class:Admin :Resulting
+        Update Student Details :Admin :Resulting
     </title>
     <head>
         <!-- CSS only -->
@@ -36,18 +36,22 @@ if(isset($_GET['classid']))
             <div class="row justify-content-center align-items-center">
                 <div class="col col-xl-10">
                     <div class="card" style="border-radius: 1rem;">
-                    <form action="update-class-backend.php" method="post">
+                    <form action="update-student-backend.php" method="post">
                         <div class="form-outline mb-4">
-                            <input type="text" placeholder="Enter Class Id" name="classid" value="<?php echo $classid ?>" readonly>
+                            <input type="text" placeholder="Enter Student Id" name="studentid" value="<?php echo $studentid ?>" readonly>
+                            <label for="classid">Student id</label>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" placeholder="Enter Name" name="studentname" value="<?php echo $single_student_array['StudentName'] ?>">
+                            <label for="classid">Student Name</label>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" placeholder="Enter Roll" name="studentroll" value="<?php echo $single_student_array['RollId'] ?>">
+                            <label for="classid">Roll</label>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" placeholder="Enter Class Id" name="classid" value="<?php echo $single_student_array['ClassId'] ?>">
                             <label for="classid">Class id</label>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <input type="text" placeholder="Enter Class" name="class" value="<?php echo $single_class_array['ClassName'] ?>">
-                            <label for="classid">Class</label>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <input type="text" placeholder="Enter Section" name="section" value="<?php echo $single_class_array['Section'] ?>" oninput="this.value = this.value.toUpperCase()">
-                            <label for="classid">Section</label>
                         </div>
                         <input type="submit" class="btn btn-success" value="Submit">
                     </form>

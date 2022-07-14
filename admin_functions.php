@@ -30,17 +30,19 @@
                                 <div class="card-body p-4 p-lg-5 text-black">
                                     <div class="align-items-center mb-3 pb-1">
                                         <i class="fas fa-cubes fa-2x me-3" style="color:#ff6219;"></i>
-                                        <span class="h1 fw-bold mb-0">Resulting</span>
-                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing:1px;">Admin Functions</h5>
-                                        <?php
-                                        if(isset($_GET['insert']))
-                                            {
-                                                $value = $_GET['insert'];
-                                                echo $value;
-                                            }
-                                        ?>
+                                        <span class="h1 fw-bold mb-0">Resulting</span><br><br>
+                                        <span class="h4 fw-normal mb-0 pb-3" style="letter-spacing:1px;">Admin Functions</span>
+                                        
                                     </div>
-
+                                    <?php
+                                    $value="";
+                                        if(isset($_GET['insert']))
+                                        {
+                                            $value = $_GET['insert'];
+                                            // echo $value;
+                                        }
+                                    ?>
+                                    <p><?php echo $value ?></p>
                                     <div class="btn-group-vertical" role="group">
                                         <div class="btn-group btn-group-lg dropend" role="group">
                                             <button type="button" class="btn btn-warning" style="width:200px; height:75px;">Classes</button>
@@ -55,8 +57,8 @@
                                             <button type="button" class="btn btn-danger" style="width:200px; height:75px;">Student</button>
                                             <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"></button>
                                             <ul class="dropdown-menu bg-dark">
-                                                <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="#">Add Student</a></li>
-                                                <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="#">Students Table</a></li>
+                                                <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="add-student.php">Add Student</a></li>
+                                                <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="student-table.php">Students Table</a></li>
                                                 <!-- <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="#">Delete Student</a></li> -->
                                             </ul>
                                         </div>
@@ -64,8 +66,8 @@
                                             <button type="button" class="btn btn-primary" style="width:200px; height:75px;">Subjects</button>
                                             <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"></button>
                                             <ul class="dropdown-menu bg-dark">
-                                                <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="#">Add Subject</a></li>
-                                                <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="#">Subjects Table</a></li>
+                                                <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="add-subject.php">Add Subject</a></li>
+                                                <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="subject-table.php">Subjects Table</a></li>
                                                 <!-- <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="#">Delete Subject</a></li> -->
                                             </ul>
                                         </div>   
@@ -73,8 +75,8 @@
                                             <button type="button" class="btn btn-success" style="width:200px; height:75px;">Subject Combinations</button>
                                             <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"></button>
                                             <ul class="dropdown-menu bg-dark">
-                                                <li class="dropdown-item" style="font-size:125%;"><a href="#">Add Subject Combination</a></li>
-                                                <li class="dropdown-item" style="font-size:125%;"><a href="#">Subject Combinations Table</a></li>
+                                                <li class="dropdown-item" style="font-size:125%;"><a href="add-subcomb.php">Add Subject Combination</a></li>
+                                                <li class="dropdown-item" style="font-size:125%;"><a href="subcomb-table.php">Subject Combinations Table</a></li>
                                                 <!-- <li class="dropdown-item" style="font-size:125%;"><a href="#">Delete Subject Combination</a></li> -->
                                             </ul>
                                         </div>   
@@ -82,8 +84,8 @@
                                             <button type="button" class="btn btn-info" style="width:200px; height:75px;">Results</button>
                                             <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"></button>
                                             <ul class="dropdown-menu bg-dark">
-                                                <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="#">Add Result</a></li>
-                                                <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="#">Results Table</a></li>
+                                                <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="add-result.php">Add Result</a></li>
+                                                <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="result-table.php">Results Table</a></li>
                                                 <!-- <li class="dropdown-item" style="font-size:125%; width:200px;"><a href="#">Update Result</a></li> -->
                                             </ul>
                                         </div>

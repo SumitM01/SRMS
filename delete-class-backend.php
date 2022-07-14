@@ -13,9 +13,9 @@ if ($conn->connect_error) {
 
 $classid = mysqli_real_escape_string($conn, $_GET['classid']);
 $classid = intval($classid);
-$delete_query =  "DELETE FROM `tblclasses` WHERE `tblclasses`.`ClassId` = '$classid'";
-
-if ($conn->query($delete_query) === TRUE) {
+$delete_query =  "DELETE FROM `tblclasses` WHERE `tblclasses`.`ClassId` = $classid";
+$reset_ai_query = "ALTER TABLE `tblclasses` AUTO_INCREMENT = $classid";
+if ($conn->query($delete_query) === TRUE && $conn->query($reset_ai_query) === TRUE) {
     $message="Class deleted successfully";
 } 
 else {

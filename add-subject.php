@@ -1,7 +1,7 @@
 
 <html>
     <title>
-        Add Class:Admin :Resulting
+        Add Subject :Admin :Resulting
     </title>
     <head>
         <!-- CSS only -->
@@ -27,30 +27,19 @@
                                 <div class="align-items-center mb-3 pb-1">
                                     <i class="fas fa-cubes fa-2x me-3" style="color:#ff6219;"></i>
                                     <span class="h1 fw-bold mb-0">Resulting</span>
-                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing:1px;">Provide class details to add class</h5>
-                                    <?php
-                                        if(isset($_GET['insert']))
-                                        {
-                                            $value = $_GET['insert'];
-                                            echo $value;
-                                        }
-                                    ?>
-                                    <form action="add-class-backend.php" method="post">
+                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing:1px;">Provide subject details to add subject</h5>
+
+                                    <form action="add-subject-backend.php" method="post">
                                         <!-- <div class="form-outline mb-4">
-                                            <input type="text" class="form-control" placeholder="Enter Class Id" name="classid">
-                                            <label for="classid">Class id</label>
+                                            <input type="text" class="form-control" placeholder="Enter Class Id" name="subjectid">
+                                            <label for="classid">Student id</label>
                                         </div> -->
                                         <div class="form-outline mb-4">
-                                            <input type="text" class="form-control" placeholder="Enter Class" name="class">
-                                            <label for="classid">Class</label>
+                                            <input type="text" class="form-control" placeholder="Enter Subject Name" name="subjectname">
+                                            <label for="classid">Subject Name</label>
                                         </div>
-                                        <div class="form-outline mb-4">
-                                            <input type="text" class="form-control" placeholder="Enter Section" name="section">
-                                            <label for="classid">Section</label>
-                                        </div>
-                                        <input type="submit" class="btn btn-success" value="Add class"> <a href="admin_functions.php" class="btn btn-dark">Back to admin page</a>
+                                        <input type="submit" class="btn btn-success" value="Add subject">
                                     </form>
-                                    
                                 </div>
                             </div>
                         </div>
