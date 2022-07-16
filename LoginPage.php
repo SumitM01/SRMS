@@ -95,8 +95,9 @@ if ($conn->connect_error) {
                                             <label class="form-label" for="roll">Roll</label>
                                         </div>
 
-                                        <div class="pt-1 mb-4">
+                                        <div class="pt-1 mb-4 d-flex justify-content-start">
                                         <input type="submit" class="btn btn-dark btn-lg btn-block" type="button" value="Show result">
+                                        <a href="Homepage.php" class="btn btn-info btn-lg">Back to home</a>
                                         </div>
                                         
                                         <!-- <a class="small text-muted" href="#!">Forgot password?</a> -->

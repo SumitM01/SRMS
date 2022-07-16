@@ -29,7 +29,7 @@ if ($conn->connect_error) {
         <div class="container py-5">
             <div class="row justify-content-center align-items-center">
                 <div class="col col-xl-10">
-                    <div class="card" style="border-radius: 1rem;">
+                    <div class="card" style="border-radius: 1rem; padding:1rem; border: 1rem solid royalblue; margin:1rem;">
                     <div class="col-sm-auto">
                         <a href="admin_functions.php" class="btn btn-dark" style="justify-content:center">Back to admin page</a>
                     </div>
@@ -47,7 +47,7 @@ if ($conn->connect_error) {
                     }
                     ?>
                     <p><?php echo $value ?></p>
-                    <table class="table" style="margin-bottom: 0px;">
+                    <table class="table">
                         <thead>
                             <th class="bg-danger">Student Id</th>
                             <th class="bg-danger">Class Id</th>

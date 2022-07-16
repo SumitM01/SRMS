@@ -35,8 +35,9 @@ if(isset($_GET['classid']))
         <div class="container py-5">
             <div class="row justify-content-center align-items-center">
                 <div class="col col-xl-10">
-                    <div class="card" style="border-radius: 1rem;">
-                    <form action="update-class-backend.php" method="post">
+                    <div class="card" style="border-radius: 1rem; width:fit-content">
+                    <form action="update-class-backend.php" method="post" style="padding:1rem; border: 5px dashed gold; margin:1rem;">
+                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing:1px;">Edit Class Details</h5> 
                         <div class="form-outline mb-4">
                             <input type="text" placeholder="Enter Class Id" name="classid" value="<?php echo $classid ?>" readonly>
                             <label for="classid">Class id</label>
@@ -50,6 +51,7 @@ if(isset($_GET['classid']))
                             <label for="classid">Section</label>
                         </div>
                         <input type="submit" class="btn btn-success" value="Submit">
+                        <a href="subject-table.php" class="btn btn-outline-warning">Back to tables</a>
                     </form>
                     </div>
                 </div>

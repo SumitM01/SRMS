@@ -35,8 +35,9 @@ if(isset($_GET['id']))
         <div class="container py-5">
             <div class="row justify-content-center align-items-center">
                 <div class="col col-xl-10">
-                    <div class="card" style="border-radius: 1rem;">
-                    <form action="update-result-backend.php" method="post">
+                    <div class="card" style="border-radius: 1rem; width:fit-content">
+                    <form action="update-result-backend.php" method="post" style="padding:1rem; border: 5px dashed gold; margin:1rem;">
+                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing:1px;">Edit result</h5> 
                         <div class="form-outline mb-4">
                             <input type="text" name="resultid" value="<?php echo $id ?>" readonly>
                             <label for="classid">Id</label>
@@ -58,6 +59,7 @@ if(isset($_GET['id']))
                             <label for="classid">Subject Marks</label>
                         </div>
                         <input type="submit" class="btn btn-success" value="Submit">
+                        <a href="subject-table.php" class="btn btn-outline-warning">Back to tables</a>
                     </form>
                     </div>
                 </div>

@@ -34,7 +34,7 @@ if ($conn->connect_error) {
         <div class="container py-5">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col col-xl-10">
-                    <div class="card" style="border-radius: 1rem;">
+                    <div class="card" style="border-radius: 1rem; padding:1rem; border: 1rem solid royalblue; margin:1rem;">
                         <div class="row justify-content-sm-center">
                             <div class="col-sm-auto">
                             <h3>Student Name : <?php 
@@ -59,7 +59,7 @@ if ($conn->connect_error) {
                                 <a href="LoginPage.php" class="btn btn-warning">Back to Login Page</a>
                             </div>
                             <div class="col-sm-auto">
-                                <input type="button" href="LoginPage.php" class="btn btn-warning" value="Download Result">
+                                <a href="downloadResult.php?classid=<?php echo $classid ?>&studentid=<?php echo $studentid ?>&classname=<?php echo $classname ?>&section=<?php echo $section ?>&roll=<?php echo $roll ?>" class="btn btn-warning">Download Result</a>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@ if ($conn->connect_error) {
         <div class="container py-5">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col col-xl-10">
-                    <div class="card" style="border-radius: 1rem;">
+                    <div class="card" style="border-radius: 1rem; padding:1rem; border: 1rem solid royalblue; margin:1rem;">
                     <table class="table" style="margin-bottom: 0px;">
                         <thead>
                             <th class="bg-info">Subject Name</th>
@@ -82,6 +82,7 @@ if ($conn->connect_error) {
                                     {
                                         while($subjectids_by_classid_studentid_array = mysqli_fetch_array($subjectids_by_classid_studentid))
                                         {
+                                            ?><tr><?php
                                             $single_subject_id = $subjectids_by_classid_studentid_array['SubjectId'];
                                             $subject_names = $conn->query("SELECT SubjectName FROM tblsubjects WHERE SubjectId = '$single_subject_id'");
                                             $subject_names_array = mysqli_fetch_array($subject_names);
@@ -92,6 +93,7 @@ if ($conn->connect_error) {
                                             $subject_mark_array = mysqli_fetch_array($subject_mark);
                                             $single_subject_mark = $subject_mark_array['Marks'];?>
                                             <td><?php echo $single_subject_mark; ?></td>
+                                              </tr>
                                             <?php
                                         }
                                     }

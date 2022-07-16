@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body > nav {
+    background-color: black;
+    color:azure;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     height: 100vh;
@@ -20,6 +26,7 @@ a {
     min-height: 100%;
     min-width: 100%;
     position: fixed;
+    
 }
 /* table, th, td{
     border: 1px gold;
@@ -27,6 +34,9 @@ a {
 } */
 td, th{
     text-align:center;
+}
+.btn {
+    margin:1%;
 }
 /* @keyframes example
 {
@@ -37,4 +47,23 @@ td, th{
     70%{background-color: plum;}
     84%{background-color: violet;}
     100%{background-color: purple;}
+} */
+/* #content, #faculty{
+    margin:2.5%;
+}
+.card-title{
+    padding:5% 0% 0% 5% ;
+}
+.card-text{
+    padding: 5%;
+}
+
+.card{
+    padding:2%;
+    background:rgba(0,0,0,0.8);
+    color:azure
+}
+
+#footer > .footer > .card {
+    background-color:black;
 } */

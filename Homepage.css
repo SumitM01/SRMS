@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+.navbar > .container-fluid > ul > li > a{
+    color:azure;
+}
+
+.navbar > .container-fluid > ul > li > a:hover{
+    color:black;
+    background-color: coral;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    /* background-color: purple; */
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;
+    /* animation: example 30s linear infinite; */
+}
+
+a {
+    color: #92badd;
+    display:inline-block;
+    text-decoration: none;
+    font-weight: 400;
+  }
+#myVideo{
+    right:0;
+    bottom:0;
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    
+}
+/* table, th, td{
+    border: 1px gold;
+    border-radius: 1rem;
+} */
+td, th{
+    text-align:center;
+}
+/* @keyframes example
+{
+    13%{background-color: purple;}
+    28%{background-color: violet;}
+    42%{background-color: plum;}
+    56%{background-color: palevioletred;}
+    70%{background-color: plum;}
+    84%{background-color: violet;}
+    100%{background-color: purple;}
+} */
+#content, #faculty{
+    margin:2.5%;
+}
+.card-title{
+    padding:5% 0% 0% 5% ;
+}
+.card-text{
+    padding: 5%;
+}
+
+.card{
+    padding:2%;
+    background:rgba(0,0,0,0.8);
+    color:azure
+}
+
+#footer > .footer > .card {
+    background-color:black;
+}
+#footerlist > li > p{
+    color:#92badd;
+}

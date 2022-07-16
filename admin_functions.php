@@ -1,4 +1,6 @@
-<?php ?>
+<?php 
+session_start();
+?>
 <html>
     <title>
         Admin Section : Resulting
@@ -34,6 +36,9 @@
                                         <span class="h4 fw-normal mb-0 pb-3" style="letter-spacing:1px;">Admin Functions</span>
                                         
                                     </div>
+                                    <?php
+                                    if(isset($_SESSION['name'])) echo("Welcome ". $_SESSION['name'] . " !!"); ?>
+                                    <a href="Adminlogout.php"><button class="btn btn-danger">Sign Out</button></a>
                                     <?php
                                     $value="";
                                         if(isset($_GET['insert']))
